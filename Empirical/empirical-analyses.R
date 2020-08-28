@@ -91,8 +91,8 @@ siteout2 <- siteout %>%
   group_by(metric) %>%
   summarize(meanval = mean(value), seval = sd(value)/sqrt(n()))
 siteout2$metric2 <- c("Classic", "Long 
-                      Timescale", "Short 
-                      Timescale")
+Timescale", "Short 
+Timescale")
 siteout2$facorder <- c(3,2,1)
 
 
@@ -187,8 +187,8 @@ siteout2 <- siteout %>%
   group_by(metric) %>%
   summarize(meanval = mean(value), seval = sd(value)/sqrt(n()))
 siteout2$metric2 <- c("Classic", "Long 
-                      Timescale", "Short 
-                      Timescale")
+Timescale", "Short 
+Timescale")
 siteout2$facorder <- c(3,2,1)
 
 
