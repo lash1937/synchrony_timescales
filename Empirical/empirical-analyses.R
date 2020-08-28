@@ -211,7 +211,7 @@ c <- plot_grid(a + theme(legend.position = "none") + annotate("text", x=0, y =32
                  scale_x_continuous(breaks = c(0,2,4,6,8,10,12,14,16,18)) + 
                  labs(x=""),
                b  + annotate("text", x=.6, y =1.25, label="b)", size = 5) +
-                 theme(panel.border = element_rect(colour = "black", fill=NA, size=.75)) + labs (y=""),
+                 theme(panel.border = element_rect(colour = "black", fill=NA, size=.75)) + labs (y="Variance Ratio"),
                align = c("hv"))
 
 c2 <- plot_grid(a2 + theme(legend.position = "none") + annotate("text", x=0, y =32, label="c)", size = 5) +
