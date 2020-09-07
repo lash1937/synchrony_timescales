@@ -204,18 +204,17 @@ b2 <- ggplot(siteout2, aes(x=reorder(metric2, facorder), y = meanval, color = me
 
 # put it all together
 c <- plot_grid(a + theme(legend.position = "none") + annotate("text", x=0, y =32, label="a)", size = 5) +
-                 scale_color_manual(values = c("black","darkgrey")) + labs(x="Time", y = "Percent Cover") + 
+                 scale_color_manual(values = c("black","darkgrey")) + labs(x="Year", y = "Percent Cover") + 
                  theme(panel.border = element_rect(colour = "black", fill=NA, size=.75))+
                  annotate("text", x = 12, y = 24, label = "Plantago erecta",fontface = 'italic', color = "darkgrey") +
                  annotate("text", x = 6.75, y = 14, label = "Microseris douglasii",fontface = 'italic', color = "black") +
-                 scale_x_continuous(breaks = c(0,2,4,6,8,10,12,14,16,18)) + 
-                 labs(x=""),
+                 scale_x_continuous(breaks = c(0,2,4,6,8,10,12,14,16,18)),
                b  + annotate("text", x=.6, y =1.25, label="b)", size = 5) +
                  theme(panel.border = element_rect(colour = "black", fill=NA, size=.75)) + labs (y="Variance Ratio"),
                align = c("hv"))
 
 c2 <- plot_grid(a2 + theme(legend.position = "none") + annotate("text", x=0, y =32, label="c)", size = 5) +
-                  scale_color_manual(values = c("darkorchid1", "orange3")) + labs(x="Time", y = "Percent Cover") + 
+                  scale_color_manual(values = c("darkorchid1", "orange3")) + labs(x="Year", y = "Percent Cover") + 
                   theme(panel.border = element_rect(colour = "black", fill=NA, size=.75)) + 
                   scale_x_continuous(breaks = c(0,2,4,6,8,10)) + 
                   annotate("text", x = 6, y = 31, label = "Plantago erecta",fontface = 'italic', color = "darkorchid1") +
