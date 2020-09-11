@@ -11,8 +11,8 @@ library(here)
 
 source(here("/Theory/Conceptual_fig_functions.R"))
 
-time <- 150        # run model for 150 timesteps; use timesteps 50-150 for calculations
-time_graph <- 150  # use timesteps 50-100 for visualizations
+time <- 100        # run model for 150 timesteps; use timesteps 50-150 for calculations
+time_graph <- 100  # use timesteps 50-100 for visualizations
 
 # environmental drivers
 x_fine <- seq(from=50, to=time_graph, by=0.1)
