@@ -2,6 +2,7 @@ library(tsvr)
 library(tidyverse)
 library(cowplot)
 library(grid)
+library(here)
 
 # Function that calculates SE
 calcSE<-function(x){
@@ -223,6 +224,6 @@ c2 <- plot_grid(a2 + theme(legend.position = "none") + annotate("text", x=0, y =
                   theme(panel.border = element_rect(colour = "black", fill=NA, size=.75)),
                 align = c("hv"))
 
-pdf("jr-empirical2.pdf", width = 10, height = 8)
+pdf(here("Figures/jr-empirical2.pdf"), width = 10, height = 8)
 plot_grid(c, c2, nrow = 2)
 dev.off()
