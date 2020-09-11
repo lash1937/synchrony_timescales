@@ -1,5 +1,16 @@
+# Model functions for theoretical case studies
+# Code to accompany the manuscript,
+# The long and the short of it: 
+# Decomposing synchrony and compensation across temporal scales
 
-# Conceptual Model of Species Response to Environmental Drivers
+#  Main model of Species Response to Environmental Drivers
+# N is species' abundances
+# r is species' intrinsic growth rates
+# beta are interaction coefficients
+# K are carrying capacities
+# envx_sigmay are the response of species y to environmental driver x
+# env are the timeseries of the environmental driver
+# time is the amount of time to run the model
 run.model <- function(N1, N2, r1, r2, beta12, beta21, K1, K2, env1_sigma1, 
                       env1_sigma2, env2_sigma1, env2_sigma2, time, env1, env2) {
   
@@ -15,6 +26,7 @@ run.model <- function(N1, N2, r1, r2, beta12, beta21, K1, K2, env1_sigma1,
   return(results)
 }
 
+# model as above, but modified for only a single environmental driver
 run.model.one.driver <- function(N1, N2, r1, r2, beta12, beta21, K1, K2, env1_sigma1, 
                                  env1_sigma2, time, env1) {
   
@@ -30,6 +42,7 @@ run.model.one.driver <- function(N1, N2, r1, r2, beta12, beta21, K1, K2, env1_si
   return(results)
 }
 
+# run spatial model with one driver per patch
 run.model.one.driver.dispersal <- function(N1P1, N2P1, N1P2, N2P2, r1p1, r2p1, r1p2, r2p2, beta12, beta21, 
                                            K1P1, K2P1, K1P2, K2P2, env1_sigma1, env1_sigma2, env2_sigma1, env2_sigma2,
                                            time, env1, env2, disp) {
@@ -53,6 +66,7 @@ run.model.one.driver.dispersal <- function(N1P1, N2P1, N1P2, N2P2, r1p1, r2p1, r
   return(results)
 }
 
+# plot model outputs
 plot.model <- function(time, results, col1, col2, col3, graph_min, graph_max) {
   
   plot(x[50:time], results[1,50:time], type="l", xaxt="n", yaxt="n", ylim=c(graph_min, graph_max), ylab="", xlab="", col=col1)
@@ -60,6 +74,7 @@ plot.model <- function(time, results, col1, col2, col3, graph_min, graph_max) {
   lines(x[50:time], results[1,50:time]+results[2,50:time], col=col3)
 }
 
+# plot climate model outputs (case study 4)
 plot.model.climate <- function(time, results, col1, col2, col3, graph_min, graph_max) {
   
   plot(x[1:time], results[1,1:time], type="l", xaxt="n", yaxt="n", ylim=c(graph_min, graph_max), ylab="", xlab="", col=col1)
@@ -67,6 +82,7 @@ plot.model.climate <- function(time, results, col1, col2, col3, graph_min, graph
   lines(x[1:time], results[1,1:time]+results[2,1:time], col=col3)
 }
 
+# plot spatial model outputs (case study 3)
 plot.model.spatial <- function(time, results, col1, col2, col3, graph_min, graph_max) {
   
   plot(seq(50:time), results[1,50:time], type="l", xaxt="n", yaxt="n", ylim=c(graph_min, graph_max), ylab="", xlab="", col=col1)
@@ -74,6 +90,7 @@ plot.model.spatial <- function(time, results, col1, col2, col3, graph_min, graph
   lines(seq(50:time), results[1,50:time]+results[2,50:time], col=col3)
 }
 
+# examine just single species dynamics (i.e. for Figure 4a)
 run.model.growth <- function(N1, N2, N3, r1, r2, r3, K1, K2, K3, time) {
   
   for (t in 1:(time-1)) {
