@@ -11,7 +11,7 @@ library(here)
 
 source(here("/Theory/Conceptual_fig_functions.R"))
 
-time <- 100        # run model for 150 timesteps; use timesteps 50-150 for calculations
+time <- 100        # run model for 100 timesteps; use timesteps 50-100 for calculations
 time_graph <- 100  # use timesteps 50-100 for visualizations
 
 # environmental drivers
@@ -38,12 +38,12 @@ par(mfcol=c(4,3), mar=c(.5,2,.5,.5), oma=c(2,2,2,.5))
 
 
 plot(x_fine, env1_fine, type="l", ylim=c(-1.5, 1.5), ylab="", xlab="", xaxt="n", yaxt="n", col="blue")
-text(x=0.25, y= 1.42, "a)", cex=1.25)
+text(x=50.25, y= 1.42, "a)", cex=1.25)
 mtext("Patch 1", side=2, outer=FALSE, line=.5)
 mtext("Drivers", side=3, outer=FALSE, line=.5)
 
 plot(x_fine, env2_fine, type="l", ylim=c(-1.5, 1.5), ylab="", xlab="", xaxt="n", yaxt="n", col="darkgreen")
-text(x=0.25, y= 1.42, "d)", cex=1.25)
+text(x=50.25, y= 1.42, "d)", cex=1.25)
 mtext("Patch 2", side=2, outer=FALSE, line=.5)
 
 plot.new()

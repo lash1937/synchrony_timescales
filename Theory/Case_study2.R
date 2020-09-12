@@ -11,7 +11,7 @@ library(here)
 
 source(here("/Theory/Conceptual_fig_functions.R"))
 
-time <- 100        # run model for 150 timesteps; use timesteps 50-150 for calculations
+time <- 100        # run model for 100 timesteps; use timesteps 50-100 for calculations
 time_graph <- 100  # use timesteps 50-100 for visualizations
 
 graph_min <- 350
